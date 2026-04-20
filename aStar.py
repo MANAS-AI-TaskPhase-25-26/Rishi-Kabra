@@ -38,7 +38,7 @@ def aStar(grid, start, goal):
                 if pixel_val < 30 or pixel_val == 255: 
                     continue
 
-                elevation_penalty = (255 - pixel_val) * 1.5
+                elevation_penalty = (255 - pixel_val) ** 2
 
                 new_g_cost = g_cost + move_weight + elevation_penalty
                 h_cost = np.sqrt((goal[0] - nx)**2 + (goal[1] - ny)**2)
